@@ -81,6 +81,23 @@ describe('ESLint Rule', function() {
     done();
   });
 
+  it('does not report anything when function is one line', function(done) {
+    var fns = [
+      function fn() { return; },
+      function fn(foo, bar, baz) { return; }
+    ];
+
+    for (var i = 0; i < fns.length; ++i) {
+      var fn = fns[i].toString();
+      var result = linter.verify(fn, linterConfig);
+
+      expect(result).to.be.an.array();
+      expect(result.length).to.equal(0);
+    }
+
+    done();
+  });
+
   it('does not report anything when function body is empty', function(done) {
     var fns = [
       function fn() {},
