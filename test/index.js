@@ -98,6 +98,25 @@ describe('ESLint Rule', function() {
     done();
   });
 
+  it('reports an error when function is one line and contains more than one statement', function(done) {
+    var fns = [
+      function fn() { console.log('broken'); return; },
+    ];
+
+    for (var i = 0; i < fns.length; ++i) {
+      var fn = fns[i].toString();
+      var result = linter.verify(fn, linterConfig);
+
+      expect(result).to.be.an.array();
+      expect(result.length).to.equal(1);
+      expect(result[0].ruleId).to.equal(HapiScopeStart.esLintRuleName);
+      expect(result[0].message).to.equal('Missing blank line at beginning of function.');
+      expect(result[0].nodeType).to.equal('FunctionDeclaration');
+    }
+
+    done();
+  });
+
   it('does not report anything when function body is empty', function(done) {
     var fns = [
       function fn() {},
