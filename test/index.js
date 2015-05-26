@@ -3,7 +3,7 @@
 var Code = require('code');
 var ESLint = require('eslint');
 var Lab = require('lab');
-var HapiScopeStart = require('../');
+var HapiScopeStart = require('../lib');
 
 var lab = exports.lab = Lab.script();
 var expect = Code.expect;
