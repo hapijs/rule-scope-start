@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cjihrig/hapi-scope-start.git"
+    "url": "https://github.com/continuationlabs/hapi-scope-start.git"
   },
   "keywords": [
     "eslint",
@@ -16,12 +16,12 @@
     "hapi",
     "scope"
   ],
-  "author": "Colin J. Ihrig <cjihrig@gmail.com> (http://www.cjihrig.com/)",
+  "author": "Continuation Labs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cjihrig/hapi-scope-start/issues"
+    "url": "https://github.com/continuationlabs/hapi-scope-start/issues"
   },
-  "homepage": "https://github.com/cjihrig/hapi-scope-start",
+  "homepage": "https://github.com/continuationlabs/hapi-scope-start",
   "devDependencies": {
     "code": "1.x.x",
     "eslint": "0.x.x",
