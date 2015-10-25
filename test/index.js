@@ -175,4 +175,27 @@ describe('ESLint Rule', function () {
     });
     done();
   });
+
+  it('handles arrow functions', function (done) {
+    var ruleTester = new RuleTester();
+    var validArrowFn = 'var foo = () => {\n\nreturn;}';
+    var invalidArrowFn = 'var foo = () => {return;}';
+
+    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart, {
+      valid: [
+        {
+          code: validArrowFn,
+          ecmaFeatures: {arrowFunctions: true}
+        }
+      ],
+      invalid: [
+        {
+          code: invalidArrowFn,
+          ecmaFeatures: {arrowFunctions: true},
+          errors: [{message: 'Missing blank line at beginning of function.'}]
+        }
+      ]
+    });
+    done();
+  });
 });
