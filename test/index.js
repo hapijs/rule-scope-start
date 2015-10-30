@@ -178,23 +178,34 @@ describe('ESLint Rule', function () {
 
   it('handles arrow functions', function (done) {
     var ruleTester = new RuleTester();
-    var validArrowFn = 'var foo = () => {\n\nreturn;}';
-    var invalidArrowFn = 'var foo = () => {return;}';
+    var valids = [
+      'var foo = () => {\n\nreturn;};',
+      'var foo = () => 42;',
+      'var foo = () => ({});',
+      'var foo = () => ({\nbar: 1});',
+      'var foo = () => [];',
+      'var foo = () => [\n1,\n2];'
+    ].map(function (fn) {
+      return {
+        code: fn,
+        ecmaFeatures: {arrowFunctions: true}
+      };
+    });
+    var invalids = [
+      'var foo = () => {\nreturn;};',
+      'var foo = () => {var foo = 1; return foo;};',
+      'var foo = () => {var foo = 1;\nreturn foo;};'
+    ].map(function (fn) {
+      return {
+        code: fn,
+        ecmaFeatures: {arrowFunctions: true},
+        errors: [{message: 'Missing blank line at beginning of function.'}]
+      };
+    });
 
     ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart, {
-      valid: [
-        {
-          code: validArrowFn,
-          ecmaFeatures: {arrowFunctions: true}
-        }
-      ],
-      invalid: [
-        {
-          code: invalidArrowFn,
-          ecmaFeatures: {arrowFunctions: true},
-          errors: [{message: 'Missing blank line at beginning of function.'}]
-        }
-      ]
+      valid: valids,
+      invalid: invalids
     });
     done();
   });
