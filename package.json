@@ -1,6 +1,6 @@
 {
   "name": "hapi-scope-start",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "ESLint rule to enforce new line at the beginning of function scope",
   "author": "Continuation Labs <contact@continuation.io> (http://continuation.io/)",
   "main": "lib/index.js",
