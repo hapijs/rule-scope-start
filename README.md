@@ -12,7 +12,8 @@ ESLint rule to enforce new line at the beginning of function scope
 
 If the string `'allow-one-liners'` is passed as the first option to this rule,
 then functions whose bodies contain zero or one statements are allowed to be
-written on a single line.
+written on a single line. This defaults to `true` for arrow functions, and
+`false` otherwise.
 
 ### `max-in-one-liner`
 
