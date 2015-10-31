@@ -180,11 +180,16 @@ describe('ESLint Rule', function () {
     var ruleTester = new RuleTester();
     var valids = [
       'var foo = () => {\n\nreturn;};',
+      'var foo = () => {\n\nreturn;}',
       'var foo = () => 42;',
+      'var foo = () => 42\n',
       'var foo = () => ({});',
+      'var foo = () => ({})',
       'var foo = () => ({\nbar: 1});',
       'var foo = () => [];',
-      'var foo = () => [\n1,\n2];'
+      'var foo = () => [\n1,\n2];',
+      'var foo = (isTrue) ? () => bar()\n: false;',
+      'var foo = (isTrue) ? true:\n () => 1;'
     ].map(function (fn) {
       return {
         code: fn,
@@ -194,7 +199,9 @@ describe('ESLint Rule', function () {
     var invalids = [
       'var foo = () => {\nreturn;};',
       'var foo = () => {var foo = 1; return foo;};',
-      'var foo = () => {var foo = 1;\nreturn foo;};'
+      'var foo = () => {var foo = 1;\nreturn foo;};',
+      'var foo = () => \n12;',
+      'var foo = () => "1" + \n"2";'
     ].map(function (fn) {
       return {
         code: fn,
