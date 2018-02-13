@@ -36,7 +36,7 @@ describe('ESLint Rule', function () {
       /* eslint-enable */
     ];
 
-    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart, {
+    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart.create, {
       valid: [],
       invalid: fns.map(function (fn) {
         return {
@@ -72,7 +72,7 @@ describe('ESLint Rule', function () {
       /* eslint-enable */
     ];
 
-    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart, {
+    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart.create, {
       valid: fns.map(function (fn) {
         return {code: fn.toString()};
       }),
@@ -88,7 +88,7 @@ describe('ESLint Rule', function () {
       function fn (foo, bar, baz) { return; }
     ];
 
-    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart, {
+    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart.create, {
       valid: fns.map(function (fn) {
         return {
           code: fn.toString(),
@@ -106,7 +106,7 @@ describe('ESLint Rule', function () {
       function fn () { var i = 0; i++; return; }
     ];
 
-    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart, {
+    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart.create, {
       valid: [],
       invalid: fns.map(function (fn) {
         return {
@@ -125,7 +125,7 @@ describe('ESLint Rule', function () {
       function fn () { console.log('broken'); return; }
     ];
 
-    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart, {
+    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart.create, {
       valid: [],
       invalid: fns.map(function (fn) {
         return {
@@ -151,7 +151,7 @@ describe('ESLint Rule', function () {
       /* eslint-enable */
     ];
 
-    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart, {
+    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart.create, {
       valid: fns.map(function (fn) {
         return {code: fn.toString()};
       }),
@@ -169,7 +169,7 @@ describe('ESLint Rule', function () {
     }.toString();
     /* eslint-enable */
 
-    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart, {
+    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart.create, {
       valid: [{code: fnExpr}],
       invalid: []
     });
@@ -210,7 +210,7 @@ describe('ESLint Rule', function () {
       };
     });
 
-    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart, {
+    ruleTester.run(HapiScopeStart.esLintRuleName, HapiScopeStart.create, {
       valid: valids,
       invalid: invalids
     });
