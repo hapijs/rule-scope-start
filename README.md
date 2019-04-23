@@ -1,10 +1,10 @@
-# hapi-scope-start
+<a href="http://hapijs.com"><img src="https://github.com/hapijs/assets/blob/master/images/family.svg" width="180px" align="right" /></a>
 
-[![Current Version](https://img.shields.io/npm/v/hapi-scope-start.svg)](https://www.npmjs.org/package/hapi-scope-start)
-[![Build Status via Travis CI](https://travis-ci.org/continuationlabs/hapi-scope-start.svg?branch=master)](https://travis-ci.org/continuationlabs/hapi-scope-start)
-![Dependencies](http://img.shields.io/david/continuationlabs/hapi-scope-start.svg)
+# rule-scope-start
 
 ESLint rule to enforce new line at the beginning of function scope
+
+[![Build Status](https://travis-ci.org/hapijs/rule-scope-start.svg?branch=master)](https://travis-ci.org/hapijs/rule-scope-start)
 
 ## Rule Options
 
