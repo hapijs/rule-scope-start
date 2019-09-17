@@ -1,6 +1,6 @@
 <a href="http://hapijs.com"><img src="https://raw.githubusercontent.com/hapijs/assets/master/images/family.png" width="180px" align="right" /></a>
 
-# rule-scope-start
+# @hapi/rule-scope-start
 
 ESLint rule to enforce new line at the beginning of function scope
 
