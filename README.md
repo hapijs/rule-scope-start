@@ -11,6 +11,6 @@
 ## Useful resources
 
 - [Documentation and API](https://hapi.dev/family/rule-scope-start/)
-- [Versions status](https://hapi.dev/resources/status/#rule-scope-start)
+- [Versions status](https://hapi.dev/resources/status/#rule-scope-start) (builds, dependencies, node versions, licenses, eol)
 - [Project policies](https://hapi.dev/policies/)
 - [Free and commercial support options](https://hapi.dev/support/)
